@@ -1,40 +1,18 @@
 import '../assets/CSS/layout.css';
-import React, { useState } from 'react';
-
-export default function Product({ flower, addToCart }) {
-    const [quantity, setQuantity] = useState(0);
-
-    const handleAddToCart = () => {
-        if (quantity > 0) {
-            addToCart(flower, quantity);
-            setQuantity(0);
-        }
-    };
-
-    return (
+export default function Product(){
+    
+    return(
         <div className="grid-item">
-            <div className="card">
-                <img
-                    src={require(`../assets/image/${flower.img}`)}
-                    alt={flower.name}
-                />
-                <div className="card-body">
-                    <h5 className="card-title">
-                        {flower.name} Price: {flower.price}
-                    </h5>
-                    <div className="quantity-container">
-                        <label htmlFor="quantity">Quantity:</label>
-                        <input
-                            type="number"
-                            id="quantity"
-                            name="quantity"
-                            value={quantity}
-                            onChange={(e) => setQuantity(Number(e.target.value))}
-                        />
+
+            <div class="card">
+                <img  />
+                <div class="card-body">
+                    <h5 class="card-title">Price:</h5>
+                    <div class="quantity-container">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" />
                     </div>
-                    <button className="card-button" onClick={handleAddToCart}>
-                        Add to Cart
-                    </button>
+                    <button class="card-button">Add to Cart</button>
                 </div>
             </div>
         </div>
